@@ -83,8 +83,8 @@ void Help(const char* name)
 			"-h: print this help and exit\n"
 			"-l <logfile>: read from this log file. Default is /var/log/secure.log. \n"
 			"-v: increase verbosity\n\n"
-			"-t <sec>: ban for this number of seconds [30-86400]. Default is 600.\n\n"
-			"-p <port>: port to ban [1-65535]. Default is 22222\n"
+			"-t <sec>: ban for this number of seconds [30-86400]. Default is 600. NOT IMPLEMENTED in v.0.1, \n\n"
+			"-p <port>: port to ban [1-65535]. Default is 22\n"
 			"\n", name
 			);
 
@@ -295,7 +295,7 @@ int main(int argc, char* argv[])
 
 														if(p->nMet >= BLOCK_AFTER_NUM_ATTACKS)
 														{
-															printf("Blocking this bastard from %d.%d.%d.%d (TODO)\n", p->Ip>>24, (p->Ip>>16)&0xff,
+															printf("Blocking this bastard from %d.%d.%d.%d\n", p->Ip>>24, (p->Ip>>16)&0xff,
 																	(p->Ip>>8) & 0xff, p->Ip & 0xff);
 
 															// Blocking
